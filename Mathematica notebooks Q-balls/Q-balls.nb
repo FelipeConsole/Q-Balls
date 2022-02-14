@@ -1,0 +1,157 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 10.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      5361,        149]
+NotebookOptionsPosition[      4117,        119]
+NotebookOutlinePosition[      4525,        135]
+CellTagsIndexPosition[      4482,        132]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Q-balls", "Title",
+ CellChangeTimes->{{3.8406378213295107`*^9, 
+  3.8406378245005703`*^9}},ExpressionUUID->"5501ad70-ccf7-46e4-b041-\
+917369e43b05"],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Espa\[CCedilla]o-tempo de Minkowski (assinatura - + + +) em coordenadas esf\
+\[EAcute]ricas\
+\>", "Section",
+ CellChangeTimes->{{3.772105392136697*^9, 3.7721053995090413`*^9}, {
+  3.8406378073653603`*^9, 3.8406378083759737`*^9}, {3.84063784793428*^9, 
+  3.840637897650168*^9}},ExpressionUUID->"b257b712-48b7-4afb-bfc0-\
+14f96f249871"],
+
+Cell[CellGroupData[{
+
+Cell["preliminares", "Subsection",
+ CellChangeTimes->{{3.840637992621252*^9, 
+  3.840637995295866*^9}},ExpressionUUID->"6572229d-9b5e-4e03-96fe-\
+d2e289a6043f"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"metric", "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "1"}], ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "1", ",", "0", ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "0", ",", 
+       SuperscriptBox["r", "2"], ",", "0"}], "}"}], ",", 
+     RowBox[{"{", 
+      RowBox[{"0", ",", "0", ",", "0", ",", 
+       RowBox[{
+        SuperscriptBox["r", "2"], "*", 
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{"Sin", "[", "\[Theta]", "]"}], ")"}], "2"]}]}], "}"}]}], 
+    "}"}]}], ";", " ", 
+  RowBox[{"(*", "ansatz", "*)"}]}]], "Input",
+ CellChangeTimes->{{3.7714456269570837`*^9, 3.771445627647198*^9}, {
+   3.771445740205852*^9, 3.7714457847077694`*^9}, {3.7714458267536697`*^9, 
+   3.7714458376013317`*^9}, {3.7714458690494566`*^9, 3.771445945000019*^9}, {
+   3.7714459996422787`*^9, 3.7714460737930803`*^9}, {3.7714498257039356`*^9, 
+   3.771449833416539*^9}, {3.771539139928563*^9, 3.7715391468976135`*^9}, 
+   3.7715948656975517`*^9, {3.7716819110038147`*^9, 3.771681911785009*^9}, {
+   3.7725523566773596`*^9, 3.772552360724288*^9}, {3.8406372182496557`*^9, 
+   3.8406372421544857`*^9}, {3.840637491179364*^9, 3.840637499449819*^9}, {
+   3.840637866378435*^9, 3.840637885709405*^9}},
+ CellLabel->"In[24]:=",ExpressionUUID->"58775fa4-ba9d-4a31-83c0-5957ddc1f113"],
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"coord", "=", 
+   RowBox[{"{", 
+    RowBox[{"t", ",", "r", ",", "\[Theta]", ",", "\[CurlyPhi]"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"metricsign", "=", 
+   RowBox[{"-", "1"}]}], ";"}]}], "Input",
+ CellChangeTimes->{{3.77153914827251*^9, 3.771539150117917*^9}, {
+  3.840637204817059*^9, 3.840637204968203*^9}, {3.840637255734144*^9, 
+  3.840637265818931*^9}},
+ CellLabel->"In[25]:=",ExpressionUUID->"573a0f22-ed14-4b0e-97a1-9e32e8ccd08d"],
+
+Cell[BoxData[
+ RowBox[{"Import", "[", 
+  "\"\</home/felipe/Desktop/Quali/Q-balls/Mathematica notebooks \
+Q-balls/diffgeo.m\>\"", "]"}]], "Input",
+ NumberMarks->False,
+ CellLabel->"In[27]:=",ExpressionUUID->"023fca5c-ee79-409b-9900-286fb0968e94"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["RicciScalar"], "Input",
+ CellChangeTimes->{{3.840637516200267*^9, 3.8406375228776903`*^9}},
+ CellLabel->"In[28]:=",ExpressionUUID->"20619063-adc4-4cbb-be8d-69af7dec3377"],
+
+Cell[BoxData["0"], "Output",
+ CellChangeTimes->{3.8406375235962133`*^9, 3.840637985877775*^9},
+ CellLabel->"Out[28]=",ExpressionUUID->"44a678b5-7748-4f82-8d9f-79ade15e0b3e"]
+}, Open  ]]
+}, Open  ]],
+
+Cell["Equa\[CCedilla]\[ATilde]o de movimento para o campo escalar", \
+"Subsection",
+ CellChangeTimes->{{3.840638003162076*^9, 
+  3.840638016044509*^9}},ExpressionUUID->"1e78aa80-0df5-4bfa-abc0-\
+7127f688aa82"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1920, 1043},
+WindowMargins->{{1366, Automatic}, {0, Automatic}},
+FrontEndVersion->"12.0 for Linux x86 (64-bit) (April 8, 2019)",
+StyleDefinitions->FrontEnd`FileName[{"Report"}, "StandardReport.nb", 
+  CharacterEncoding -> "UTF-8"]
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 154, 3, 98, "Title",ExpressionUUID->"5501ad70-ccf7-46e4-b041-917369e43b05"],
+Cell[CellGroupData[{
+Cell[759, 29, 344, 7, 70, "Section",ExpressionUUID->"b257b712-48b7-4afb-bfc0-14f96f249871"],
+Cell[CellGroupData[{
+Cell[1128, 40, 160, 3, 35, "Subsection",ExpressionUUID->"6572229d-9b5e-4e03-96fe-d2e289a6043f"],
+Cell[1291, 45, 1426, 31, 50, "Input",ExpressionUUID->"58775fa4-ba9d-4a31-83c0-5957ddc1f113"],
+Cell[2720, 78, 500, 12, 66, "Input",ExpressionUUID->"573a0f22-ed14-4b0e-97a1-9e32e8ccd08d"],
+Cell[3223, 92, 245, 5, 42, "Input",ExpressionUUID->"023fca5c-ee79-409b-9900-286fb0968e94"],
+Cell[CellGroupData[{
+Cell[3493, 101, 184, 2, 42, "Input",ExpressionUUID->"20619063-adc4-4cbb-be8d-69af7dec3377"],
+Cell[3680, 105, 173, 2, 42, "Output",ExpressionUUID->"44a678b5-7748-4f82-8d9f-79ade15e0b3e"]
+}, Open  ]]
+}, Open  ]],
+Cell[3880, 111, 209, 4, 35, "Subsection",ExpressionUUID->"1e78aa80-0df5-4bfa-abc0-7127f688aa82"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
