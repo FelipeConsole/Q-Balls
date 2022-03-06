@@ -1,4 +1,5 @@
 !		Q-balls -  novembro de 2021 - Felipe Console
+
 !		Resolve a equação para Q-balls com potential 
 !		U =  1.1 * phi^2 - 2* phi^4 + phi^6
 !		usando a frequencia do campo escalar, omega, como variável dinâmica.
@@ -35,19 +36,18 @@
 
 		open(unit = 3, file='solu.new')
 		open(unit = 4, file='solu.old')
-		open(unit = 5, file='phi_0=1.dat')
-		!open(unit = 55, file='solu_init_q_ball_ipr_415_xl_1200.dat')
-		open(unit = 75, file='sopri.dat')
+		open(unit = 5, file='solu.dat')
+		! open(unit = 75, file='sopri.dat')
 		!open(unit = 105, file='xl_415_tol_d_6_bc2_168pts.dat',position='append')
-		open(unit = 155, file='properties3.dat',position='append')
 		open(unit = 95, file='parametros.dat')
+		open(unit = 155, file='data.dat',position='append')
 !
 !			PARAMETERS
 !
       pi=4.d0*datan(1.d0)                
       NPRI=1
-	   cf = 1.d0
-	  ! read(95,*)cf
+	!   cf = 1.d0
+	  read(95,*)cf
 	  ! write(*,*)cf
 	  ipr = 415
 	
