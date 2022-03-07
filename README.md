@@ -6,7 +6,7 @@ In this repo I make available the code to solve the Q-balls equations described 
 
 This repo contains:
 1. The Mathematica notebooks to obtain the equations and translate them to Fortran form,
-2. The fortran solver (Colsys) and the program that calls it to solve the equations.
+2. The fortran solver (colsys.f) and the program (bolas-q.f90) that calls it to solve the equations.
 3. A bash script to automate the increment in the parameters values, compile and run the programs.
 
 There are some points I should clarify. For example, why use Fortran to solve the equations?
